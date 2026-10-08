@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #0f172a;
+  --accent: #7c3aed;
+  --accent-light: #f5f3ff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-cv: rgba(255, 255, 255, 0.9);
+  --border: rgba(226, 232, 240, 0.5);
+  --font-main: 'Outfit', sans-serif;
+}
+
+body { 
+  font-family: var(--font-main); 
+  background-color: #0f172a;
+  /* Premium Mesh Gradient */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.3) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, rgba(37, 99, 235, 0.3) 0, transparent 50%), 
+    radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.2) 0, transparent 50%), 
+    radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.2) 0, transparent 50%);
+  background-attachment: fixed;
+  padding: 80px 0; 
+  display: flex; 
+  justify-content: center; 
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cv {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--bg-cv);
+  /* Glassmorphism Effect */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 60px 80px;
+  position: relative;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stunning Header */
+.mini-header { 
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(124, 58, 237, 0.3);
+  border: 4px solid #fff;
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.mini-header h1 { 
+  font-size: 36pt; 
+  font-weight: 700; 
+  letter-spacing: -1.5px; 
+  margin-bottom: 8px; 
+  color: var(--primary);
+  line-height: 1;
+}
+
+.subtitle { 
+  font-size: 11pt; 
+  letter-spacing: 5px; 
+  font-weight: 600; 
+  color: var(--accent); 
+  text-transform: uppercase; 
+  margin-bottom: 20px; 
+}
+
+.mini-contacts { 
+  font-size: 9pt; 
+  color: var(--text-muted);
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+}
+
+/* Sections */
+.mini-section { margin-bottom: 45px; }
+
+.sec-heading { 
+  font-size: 9pt; 
+  font-weight: 700; 
+  color: var(--primary); 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  margin-bottom: 25px; 
+  display: flex;
+  align-items: center;
+}
+
+.sec-heading::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 3px;
+  margin-right: 15px;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.4);
+}
+
+.sec-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+  margin-left: 15px;
+}
+
+.about-text { 
+  font-size: 11.5pt; 
+  line-height: 1.8; 
+  color: var(--text-main); 
+  background: rgba(248, 250, 252, 0.5);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+}
+
+/* Work Items */
+.items-container {
+  display: grid;
+  gap: 30px;
+}
+
+.work-item { position: relative; }
+
+.work-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: baseline; 
+  margin-bottom: 4px;
+}
+
+.company { 
+  font-size: 12.5pt; 
+  font-weight: 700; 
+  color: var(--primary); 
+}
+
+.duration { 
+  font-size: 9.5pt; 
+  color: var(--accent); 
+  font-weight: 700;
+  background: var(--accent-light);
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+
+.role { 
+  font-size: 10.5pt; 
+  font-weight: 600; 
+  color: var(--text-muted); 
+}
+
+.work-desc { 
+  font-size: 10.5pt; 
+  color: var(--text-main); 
+  line-height: 1.7; 
+  margin-top: 10px; 
+}
+
+/* Personal Grid */
+.personal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: var(--accent-light);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+.personal-item { font-size: 10pt; color: var(--text-main); }
+.personal-item b { color: var(--accent); margin-right: 5px; }
+
+/* Buttons */
+.btn-pdf { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 18px 40px; border: none; font-size: 11pt; font-weight: 700; cursor: pointer; border-radius: 20px; z-index: 100; box-shadow: 0 25px 50px rgba(124, 58, 237, 0.4); transition: all 0.3s ease; display: flex; align-items: center; gap: 12px; }
+.btn-pdf:hover { transform: translateX(-50%) translateY(-5px); box-shadow: 0 35px 60px rgba(124, 58, 237, 0.5); }
+
+.btn-add { background: rgba(255, 255, 255, 0.5); border: 1px dashed var(--text-muted); color: var(--text-muted); padding: 8px 20px; font-size: 9pt; font-weight: 600; cursor: pointer; margin-top: 15px; border-radius: 10px; transition: all 0.2s ease; opacity: 0; }
+.mini-section:hover .btn-add { opacity: 1; }
+.btn-add:hover { border-color: var(--accent); color: var(--accent); background: #fff; }
+
+.btn-del { position: absolute; right: -10px; top: -10px; background: #ef4444; color: #fff; border: none; width: 22px; height: 22px; font-size: 10pt; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3); opacity: 0; transition: opacity 0.2s; z-index: 5; }
+.item-container:hover .btn-del { opacity: 1; }
+.item-container { position: relative; transition: background 0.2s; border-radius: 8px; }
+.item-container:hover { background: rgba(0,0,0,0.02); }
+
+@media print {
+  .btn-pdf, .btn-add, .btn-del { display: none !important; }
+}
+
+@media print {
+  body { background: none; padding: 0; }
+  .cv { width: 210mm; min-height: 297mm; padding: 20mm; box-shadow: none; border-radius: 0; background: white; border: none; backdrop-filter: none; }
+  .btn-pdf, .btn-add, .btn-del { display: none !important; }
+  .about-text { background: #f8fafc; border: 1px solid #e2e8f0; }
+}
+
+@media (max-width: 230mm) {
+  body { padding: 40px 20px; }
+  .cv { width: 100%; padding: 40px 30px; min-height: auto; }
+}

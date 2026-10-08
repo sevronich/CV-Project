@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Sidebar CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/style3.css" />
+  </head>
+  <body>
+    <button class="btn-pdf" onclick="window.print()">⬇ Download Professional PDF</button>
+
+    <div class="cv">
+      <div class="cv-layout">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+          <div class="photo-container" onclick="document.getElementById('exec-up').click()">
+            <div class="photo-circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" id="exec-img" />
+              <div class="photo-label">Photo</div>
+            </div>
+            <input type="file" id="exec-up" style="display:none" onchange="previewExec(this)">
+          </div>
+
+          <div class="side-section">
+            <h3 class="side-title">CONTACT</h3>
+            <div class="side-divider"></div>
+            <div class="side-item" contenteditable="true">✉ [Your Email Address]</div>
+            <div class="side-item" contenteditable="true">📞 [Your Phone Number]</div>
+            <div class="side-item" contenteditable="true">📍 [Your Current Address]</div>
+          </div>
+
+          <div class="side-section">
+            <h3 class="side-title">PERSONAL INFO</h3>
+            <div class="side-divider"></div>
+            <div class="info-row">
+              <span class="info-label">DOB:</span> <span contenteditable="true">[Date Month Year]</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Birthplace:</span> <span contenteditable="true">[City / Province]</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Status:</span> <span contenteditable="true">[Single / Married]</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Sex:</span> <span contenteditable="true">[Male / Female]</span>
+            </div>
+          </div>
+
+          <div class="side-section" id="sec-lang-exec">
+            <h3 class="side-title">LANGUAGES</h3>
+            <div class="side-divider"></div>
+            <div class="items-container">
+              <div class="lang-row item-container">
+                <span class="info-label" contenteditable="true">Khmer:</span> <span contenteditable="true">Native</span>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-lang-exec', 'lang-row')">+ Add</button>
+          </div>
+
+          <div class="side-section" id="sec-software-exec">
+            <h3 class="side-title">SOFTWARE</h3>
+            <div class="side-divider"></div>
+            <div class="items-container">
+              <div class="tech-item item-container">
+                <span contenteditable="true">MS Office, ERP, SAP</span>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-software-exec', 'tech-item')">+ Add Tool</button>
+          </div>
+
+          <div class="side-section" id="sec-tech-exec">
+            <h3 class="side-title">TECHNICAL SKILLS</h3>
+            <div class="side-divider"></div>
+            <div class="items-container">
+              <div class="tech-item item-container">
+                <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-tech-exec', 'tech-item')">+ Add Skill</button>
+          </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+          <header class="main-header">
+            <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+            <h2 contenteditable="true">[YOUR PROFESSIONAL TITLE]</h2>
+          </header>
+
+          <section class="main-sec">
+            <h3 class="main-title">CAREER SUMMARY</h3>
+            <p class="obj-text" contenteditable="true">
+              Strategic and high-performing professional with a track record of driving operational efficiency and business growth. Expert in cross-functional leadership and implementing data-driven strategies to achieve corporate objectives.
+            </p>
+          </section>
+
+          <section class="main-sec" id="sec-edu-main">
+            <h3 class="main-title">EDUCATION</h3>
+            <div class="items-container">
+              <div class="entry item-container">
+                <div class="entry-head">
+                  <div class="entry-org" contenteditable="true">[Degree / Major Name]</div>
+                  <div class="entry-date" contenteditable="true">[Year - Year]</div>
+                </div>
+                <div class="entry-sub" contenteditable="true">[University or School Name]</div>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-edu-main', 'entry')">+ Add Education</button>
+          </section>
+
+          <section class="main-sec" id="sec-exp-main">
+            <h3 class="main-title">PROFESSIONAL EXPERIENCE</h3>
+            <div class="items-container">
+              <div class="entry item-container">
+                <div class="entry-head">
+                  <div class="entry-org" contenteditable="true">[Job Position / Title]</div>
+                  <div class="entry-date" contenteditable="true">[Year - Present]</div>
+                </div>
+                <div class="entry-sub" contenteditable="true">[Company or Organization Name]</div>
+                <ul class="entry-bullets">
+                  <li contenteditable="true">Developed and executed a comprehensive [Strategy] that led to a [X]% increase in revenue.</li>
+                  <li contenteditable="true">Managed a cross-departmental team to successfully launch [Project Name].</li>
+                </ul>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-exp-main', 'entry')">+ Add Experience</button>
+          </section>
+
+          <section class="main-sec" id="sec-awards-exec">
+            <h3 class="main-title">AWARDS & ACHIEVEMENTS</h3>
+            <ul class="dot-list items-container" style="list-style: none; padding-left: 0;">
+              <li class="item-container" style="margin-bottom: 5px;">
+                <span contenteditable="true">• [Award Name] - [Organization], [Year]</span>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </li>
+            </ul>
+            <button class="btn-add" onclick="addItem('sec-awards-exec', 'li')">+ Add Award</button>
+          </section>
+
+          <section class="main-sec">
+            <h3 class="main-title">REFERENCES</h3>
+            <p class="ref-text" contenteditable="true">Available upon request.</p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+      function previewExec(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) { document.getElementById("exec-img").src = e.target.result; };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

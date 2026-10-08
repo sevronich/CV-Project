@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Bold CV - [YOUR NAME]</title>
+    <link rel="stylesheet" href="../CSS/style6.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">⬇ Export Modern CV</button>
+
+    <div class="cv">
+        <header class="header">
+            <div class="name-block">
+                <h1 contenteditable="true">[YOUR NAME]</h1>
+                <div class="role" contenteditable="true">[PROFESSIONAL TITLE]</div>
+            </div>
+            <div class="contact-block">
+                <div contenteditable="true">[Email Address]</div>
+                <div contenteditable="true">[Phone Number]</div>
+                <div contenteditable="true">[City, Province]</div>
+            </div>
+        </header>
+
+        <div class="content">
+            <aside class="sidebar">
+                <section class="side-sec">
+                    <span class="section-label">Personal Details</span>
+                    <div class="side-item" contenteditable="true"><b>DOB:</b> [Date Month Year]</div>
+                    <div class="side-item" contenteditable="true"><b>Gender:</b> [Male / Female]</div>
+                    <div class="side-item" contenteditable="true"><b>Status:</b> [Single / Married]</div>
+                    <div class="side-item" contenteditable="true"><b>Nationality:</b> [Nationality]</div>
+                    <div class="side-item" contenteditable="true"><b>Location:</b> [City, Province]</div>
+                </section>
+
+                <section class="side-sec" id="sec-skills-modern">
+                    <span class="section-label">Core Skills</span>
+                    <div class="items-container">
+                        <div class="side-item item-container">
+                            <b>[SKILL NAME]</b>
+                            <span contenteditable="true">[Expert/Advanced]</span>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-skills-modern', 'side-item')">+ Add Skill</button>
+                </section>
+
+                <section class="side-sec" id="sec-software-modern">
+                    <span class="section-label">Software</span>
+                    <div class="items-container">
+                        <div class="side-item item-container">
+                            <span contenteditable="true">MS Office, Adobe Suite</span>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-software-modern', 'side-item')">+ Add Tool</button>
+                </section>
+
+                <section class="side-sec">
+                    <span class="section-label">Languages</span>
+                    <div class="side-item"><b>KHMER</b> Native</div>
+                    <div class="side-item"><b>ENGLISH</b> [Fluent/Professional]</div>
+                </section>
+            </aside>
+
+            <main class="main">
+                <section class="main-sec">
+                    <span class="section-label">Profile</span>
+                    <div class="entry-text" contenteditable="true">
+                        Dynamic and results-oriented professional with a focus on [Industry/Goal]. Proven ability to lead teams and execute high-priority projects that deliver measurable business impact.
+                    </div>
+                </section>
+
+                <section class="main-sec" id="sec-exp-modern">
+                    <span class="section-label">Experience</span>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-org" contenteditable="true">[Company Name]</span>
+                                <span class="entry-date" contenteditable="true">[Year — Present]</span>
+                            </div>
+                            <div class="entry-role" contenteditable="true">[Job Position / Title]</div>
+                            <div class="entry-text" contenteditable="true">
+                                • Achieved [X]% growth in [Metric] through strategic [Initiative].<br>
+                                • Managed a team of [N] to deliver [Key Deliverable].
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-exp-modern', 'entry')">+ Add Position</button>
+                </section>
+
+                <section class="main-sec" id="sec-edu-modern">
+                    <span class="section-label">Education</span>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-org" contenteditable="true">[University or School Name]</span>
+                                <span class="entry-date" contenteditable="true">[Year — Year]</span>
+                            </div>
+                            <div class="entry-role" contenteditable="true">[Degree Name / Major]</div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-edu-modern', 'entry')">+ Add Education</button>
+                </section>
+
+                <section class="main-sec">
+                    <span class="section-label">References</span>
+                    <div class="entry-text" contenteditable="true" style="font-style: italic;">
+                        Professional references available upon request.
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Creative CV - [YOUR NAME]</title>
+    <link rel="stylesheet" href="../CSS/style2.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">⬇ Download Premium PDF</button>
+
+    <div class="cv">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="photo-section">
+                <div class="photo-wrap" onclick="document.getElementById('profile-upload').click()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" id="profile-img" alt="Profile">
+                    <input type="file" id="profile-upload" style="display:none" onchange="previewCreative(this)">
+                </div>
+            </div>
+
+            <div class="side-title">Contact</div>
+            <div class="side-content">
+                <div class="side-item">
+                    <span class="side-label">Email:</span>
+                    <span contenteditable="true">[your.email@example.com]</span>
+                </div>
+                <div class="side-item">
+                    <span class="side-label">Phone:</span>
+                    <span contenteditable="true">[+855 00 000 000]</span>
+                </div>
+            </div>
+
+            <div class="side-title">Personal Details</div>
+            <div class="side-content">
+                <div class="side-item">
+                    <span class="side-label">Date of Birth:</span>
+                    <span contenteditable="true">[Date Month Year]</span>
+                </div>
+                <div class="side-item">
+                    <span class="side-label">Gender:</span>
+                    <span contenteditable="true">[Male / Female]</span>
+                </div>
+                <div class="side-item">
+                    <span class="side-label">Nationality:</span>
+                    <span contenteditable="true">[Nationality]</span>
+                </div>
+            </div>
+
+            <div class="side-title">Languages</div>
+            <div class="side-content" id="sec-lang">
+                <div class="items-container">
+                    <div class="side-item item-container">
+                        <span contenteditable="true">Khmer: Native</span>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                    <div class="side-item item-container">
+                        <span contenteditable="true">English: Proficient</span>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-lang', 'side-item')">+ Add Language</button>
+            </div>
+
+            <div class="side-title">Software</div>
+            <div class="side-content" id="sec-software">
+                <div class="items-container">
+                    <div class="side-item item-container">
+                        <span contenteditable="true">MS Office, Adobe Suite</span>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-software', 'side-item')">+ Add Tool</button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <header class="header">
+                <div class="name-box">
+                    <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+                    <h2 contenteditable="true">[YOUR PROFESSIONAL TITLE]</h2>
+                </div>
+            </header>
+
+            <section class="section">
+                <div class="section-title">Professional Profile</div>
+                <div class="entry-desc" contenteditable="true">
+                    A highly accomplished and innovative professional with over [X] years of experience in [Industry]. Proven track record of delivering high-quality solutions and leading successful teams in dynamic environments.
+                </div>
+            </section>
+
+            <section class="section" id="sec-exp">
+                <div class="section-title">Professional Experience</div>
+                <div class="items-container">
+                    <div class="entry item-container">
+                        <div class="entry-header">
+                            <div class="entry-title" contenteditable="true">[Job Position / Title]</div>
+                            <div class="entry-date" contenteditable="true">[Year - Present]</div>
+                        </div>
+                        <div class="entry-org" contenteditable="true">[Company Name]</div>
+                        <div class="entry-desc" contenteditable="true">
+                            • Led the digital transformation initiative, improving operational efficiency by 25%.<br>
+                            • Managed a budget of $[X]M and delivered project [N]% under cost.
+                        </div>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-exp', 'entry')">+ Add Experience</button>
+            </section>
+
+            <section class="section" id="sec-edu">
+                <div class="section-title">Education</div>
+                <div class="items-container">
+                    <div class="entry item-container">
+                        <div class="entry-header">
+                            <div class="entry-title" contenteditable="true">[Degree / Major Name]</div>
+                            <div class="entry-date" contenteditable="true">[Year - Year]</div>
+                        </div>
+                        <div class="entry-org" contenteditable="true">[University or School Name]</div>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-edu', 'entry')">+ Add Education</button>
+            </section>
+
+            <section class="section" id="sec-awards-creative">
+                <div class="section-title">Awards & Certifications</div>
+                <div class="items-container">
+                    <div class="entry item-container">
+                        <div contenteditable="true">• [Award / Certificate Name] - [Year]</div>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-awards-creative', 'entry')">+ Add Award</button>
+            </section>
+
+            <section class="section">
+                <div class="section-title">References</div>
+                <div class="entry-desc" contenteditable="true" style="font-style: italic;">
+                    Professional references available upon request.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+        function previewCreative(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profile-img").src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

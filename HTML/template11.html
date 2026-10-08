@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold Badge - Template 11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style11.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">Export CV 11</button>
+    <div class="cv">
+        <aside class="sidebar">
+            <div class="photo-container" onclick="document.getElementById('up11').click()">
+                <div class="photo-border"></div>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800" id="img11">
+                <input type="file" id="up11" style="display:none" onchange="prev11(this)">
+            </div>
+
+            <section class="side-sec">
+                <h3 class="side-label"><i class="fas fa-address-book"></i> My Contact</h3>
+                <div class="side-item"><i class="fas fa-map-marker-alt"></i> <span contenteditable="true">[City, Province]</span></div>
+                <div class="side-item"><i class="fas fa-phone"></i> <span contenteditable="true">[Phone Number]</span></div>
+                <div class="side-item"><i class="fas fa-envelope"></i> <span contenteditable="true">[Email Address]</span></div>
+                <div class="side-item"><i class="fas fa-globe"></i> <span contenteditable="true">[Portfolio]</span></div>
+            </section>
+
+            <section class="side-sec" id="sec-skills11">
+                <h3 class="side-label"><i class="fas fa-star"></i> My Skills</h3>
+                <div class="items-container">
+                    <div class="skill-entry item-container">
+                        <div class="skill-name" contenteditable="true">[Skill Name]</div>
+                        <div class="bar-bg"><div class="bar-fill" style="width: 80%"></div></div>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-skills11', 'skill-entry')">+ Add Skill</button>
+            </section>
+        </aside>
+
+        <main class="main">
+            <header class="header">
+                <h1 contenteditable="true">MARIANA NAPOLITANI</h1>
+                <h2 contenteditable="true">Professional Designer</h2>
+            </header>
+
+            <section class="main-sec" id="sec-edu11">
+                <h3 class="badge">Education Background</h3>
+                <div class="items-container">
+                    <div class="main-entry item-container">
+                        <div class="entry-dot"></div>
+                        <div class="entry-header">
+                            <div class="entry-title" contenteditable="true">[Bachelor in Graphic Design]</div>
+                            <div class="entry-date" contenteditable="true">[2004 — 2008]</div>
+                        </div>
+                        <div class="entry-tag" contenteditable="true">[Lurana University]</div>
+                        <div class="entry-text" contenteditable="true">Graduated with high distinction. Focused on visual identity.</div>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-edu11', 'main-entry')">+ Add Education</button>
+            </section>
+
+            <section class="main-sec" id="sec-exp11">
+                <h3 class="badge">Work Experience</h3>
+                <div class="items-container">
+                    <div class="main-entry item-container">
+                        <div class="entry-dot"></div>
+                        <div class="entry-header">
+                            <div class="entry-title" contenteditable="true">[Senior Creative Lead]</div>
+                            <div class="entry-date" contenteditable="true">[2010 — Present]</div>
+                        </div>
+                        <div class="entry-tag" contenteditable="true">[Agency Name]</div>
+                        <div class="entry-text" contenteditable="true">• Led design teams to deliver award-winning campaigns.<br>• Spearheaded digital transformation projects.</div>
+                        <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="addItem('sec-exp11', 'main-entry')">+ Add Experience</button>
+            </section>
+
+            <section class="main-sec">
+                <h3 class="badge">Awards & Honors</h3>
+                <div class="entry-text" contenteditable="true" style="margin-left: 20px;">
+                    • Gold Award - Design Excellence 2022<br>
+                    • Most Innovative Designer - Industry Awards
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+        function prev11(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('img11').src = e.target.result; };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

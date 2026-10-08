@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Corporate - Template 10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style10.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">Export CV 10</button>
+    <div class="cv">
+        <header class="header">
+            <div class="photo-box" onclick="document.getElementById('up10').click()">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" id="img10">
+                <input type="file" id="up10" style="display:none" onchange="prev10(this)">
+            </div>
+            <div class="header-info">
+                <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+                <div class="contact-grid">
+                    <div contenteditable="true"><i class="fas fa-map-marker-alt"></i> [City, Province]</div>
+                    <div contenteditable="true"><i class="fas fa-phone"></i> [Phone Number]</div>
+                    <div contenteditable="true"><i class="fas fa-envelope"></i> [Email Address]</div>
+                    <div contenteditable="true"><i class="fas fa-globe"></i> [Portfolio Website]</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="sec">
+            <h3 class="sec-label">Professional Summary</h3>
+            <div class="sec-content" contenteditable="true">
+                Results-oriented [Professional Title] with a strong track record of success in [Industry]. Proven expertise in [Skill 1], [Skill 2], and [Skill 3]. Committed to driving efficiency and delivering high-quality solutions for complex challenges.
+            </div>
+        </section>
+
+        <section class="sec" id="sec-exp10">
+            <h3 class="sec-label">Work Experience</h3>
+            <div class="items-container">
+                <div class="exp-entry item-container">
+                    <div class="exp-header">
+                        <span class="exp-role" contenteditable="true">[Your Position]</span>
+                        <span class="exp-date" contenteditable="true">[Jan 2023 — Present]</span>
+                    </div>
+                    <div class="exp-org" contenteditable="true">[Company Name / Organization]</div>
+                    <ul class="bullets">
+                        <li contenteditable="true">Developed and implemented [X] systems resulting in [X]% efficiency gain.</li>
+                        <li contenteditable="true">Collaborated with cross-functional teams to deliver [Project Name] on time.</li>
+                    </ul>
+                    <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-exp10', 'exp-entry')">+ Add Experience</button>
+        </section>
+
+        <section class="sec" id="sec-edu10">
+            <h3 class="sec-label">Education</h3>
+            <div class="items-container">
+                <div class="edu-entry item-container">
+                    <div class="edu-header">
+                        <span class="edu-deg" contenteditable="true">[Degree / Major Name]</span>
+                        <span class="edu-date" contenteditable="true">[2016 — 2020]</span>
+                    </div>
+                    <div class="edu-uni" contenteditable="true">[University Name]</div>
+                    <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-edu10', 'edu-entry')">+ Add Education</button>
+        </section>
+
+        <section class="sec" id="sec-info10">
+            <h3 class="sec-label">Additional Information</h3>
+            <div class="items-container">
+                <div class="info-item item-container">
+                    <strong contenteditable="true">[Technical Skills]:</strong>
+                    <span contenteditable="true">[Skill A, Skill B, Skill C]</span>
+                    <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                </div>
+                <div class="info-item item-container">
+                    <strong contenteditable="true">[Certifications]:</strong>
+                    <span contenteditable="true">[Certificate Name, Issuing Body]</span>
+                    <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-info10', 'info-item')">+ Add Info</button>
+        </section>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+        function prev10(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('img10').src = e.target.result; };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

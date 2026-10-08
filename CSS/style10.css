@@ -1,0 +1,107 @@
+/* Template 10 - Clean Corporate */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f1f5f9;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  color: #334155;
+}
+
+.cv {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  padding: 60px 70px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #1e40af;
+  padding-bottom: 30px;
+}
+
+.photo-box {
+  width: 120px;
+  height: 120px;
+  background: #f8fafc;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.photo-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.header-info h1 {
+  font-size: 26pt;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 30px;
+  font-size: 9pt;
+  color: #64748b;
+}
+
+.contact-grid i { color: #1e40af; margin-right: 5px; width: 15px; }
+
+.sec { margin-bottom: 35px; }
+.sec-label {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #1e40af;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.sec-content { font-size: 10pt; line-height: 1.6; text-align: justify; }
+
+.exp-entry, .edu-entry { margin-bottom: 25px; }
+.exp-header, .edu-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.exp-role, .edu-deg { font-weight: 700; font-size: 11pt; color: #1e293b; }
+.exp-date, .edu-date { font-weight: 700; font-size: 9pt; color: #1e40af; }
+.exp-org, .edu-uni { font-size: 10pt; font-weight: 500; color: #475569; margin-bottom: 8px; }
+
+.bullets { margin-top: 8px; padding-left: 20px; }
+.bullets li { font-size: 10pt; margin-bottom: 5px; line-height: 1.5; }
+
+.info-item { font-size: 10pt; margin-bottom: 10px; }
+.info-item strong { color: #1e293b; margin-right: 5px; }
+
+/* Buttons */
+.btn-pdf { position: fixed; bottom: 30px; right: 30px; background: #1e40af; color: white; padding: 15px 30px; border: none; border-radius: 4px; cursor: pointer; font-weight: 700; }
+.btn-add { background: none; border: 1px solid #1e40af; color: #1e40af; padding: 4px 12px; font-size: 8pt; border-radius: 4px; cursor: pointer; margin-top: 10px; opacity: 0; }
+.sec:hover .btn-add { opacity: 1; }
+
+.btn-del { position: absolute; right: -15px; top: 0; background: #ef4444; color: white; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.2s; z-index: 5; }
+.item-container:hover .btn-del { opacity: 1; }
+.item-container { position: relative; transition: background 0.1s; border-radius: 4px; }
+
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: none; padding: 0; }
+  .cv { width: 210mm !important; height: 297mm !important; box-shadow: none; border: none; }
+  .header { border-bottom-color: #1e40af !important; -webkit-print-color-adjust: exact; }
+  .sec-label { border-bottom-color: #1e40af !important; -webkit-print-color-adjust: exact; color: #1e40af !important; }
+  .btn-pdf, .btn-add, .btn-del { display: none !important; }
+}

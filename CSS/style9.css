@@ -1,0 +1,149 @@
+/* Template 9 - Professional Contrast */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #cbd5e1;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  color: #334155;
+}
+
+.cv {
+  width: 210mm;
+  height: 297mm;
+  background: white;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 35%;
+  background: #334155;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-area {
+  height: 280px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 200px;
+  background: #475569;
+  border-radius: 0 0 50% 50%;
+}
+
+.profile-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid white;
+  overflow: hidden;
+  z-index: 2;
+  background: white;
+  cursor: pointer;
+}
+
+.profile-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.side-content { padding: 40px 30px; }
+.side-sec { margin-bottom: 40px; }
+.side-title { 
+  font-size: 11pt; 
+  font-weight: 700; 
+  color: #94a3b8; 
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 8px;
+}
+
+.side-item { font-size: 9.5pt; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #f1f5f9; }
+.edu-entry { margin-bottom: 20px; }
+.edu-uni { font-weight: 700; font-size: 10pt; }
+.edu-deg { font-size: 9pt; color: #cbd5e1; }
+.edu-date { font-size: 8.5pt; color: #94a3b8; }
+
+/* Main Area */
+.main-area {
+  flex: 1;
+  padding: 60px 50px;
+}
+
+.header {
+  margin-bottom: 50px;
+  border-bottom: 2px solid #334155;
+  padding-bottom: 30px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34pt;
+  color: #1e293b;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.header h2 {
+  font-size: 14pt;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.main-sec { margin-bottom: 40px; }
+.sec-label {
+  font-size: 12pt;
+  font-weight: 800;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-label i { color: #64748b; font-size: 10pt; }
+.sec-text { font-size: 10.5pt; line-height: 1.7; text-align: justify; }
+
+.exp-entry { margin-bottom: 30px; }
+.exp-header { display: flex; gap: 20px; margin-bottom: 10px; }
+.exp-date { font-weight: 700; color: #1e293b; font-size: 10pt; width: 100px; }
+.exp-org { font-weight: 800; font-size: 11pt; color: #334155; }
+.exp-role { font-weight: 600; color: #64748b; font-size: 9.5pt; font-style: italic; }
+.exp-desc { font-size: 10pt; line-height: 1.6; margin-left: 120px; }
+
+.ref-entry { font-size: 10pt; color: #334155; line-height: 1.6; }
+
+/* Buttons */
+.btn-pdf { position: fixed; bottom: 30px; right: 30px; background: #334155; color: white; padding: 15px 30px; border: none; border-radius: 4px; cursor: pointer; font-weight: 700; z-index: 100; }
+.btn-add { background: none; border: 1px dashed #64748b; color: #64748b; padding: 5px 12px; font-size: 8pt; border-radius: 4px; cursor: pointer; margin-top: 10px; opacity: 0; transition: 0.3s; }
+.side-sec:hover .btn-add, .main-sec:hover .btn-add { opacity: 1; }
+
+.btn-del { position: absolute; right: -10px; top: -10px; background: #ef4444; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.2s; z-index: 5; }
+.item-container:hover .btn-del { opacity: 1; }
+.item-container { position: relative; transition: background 0.2s; border-radius: 8px; }
+
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: none; padding: 0; }
+  .cv { width: 210mm !important; height: 297mm !important; box-shadow: none; border: none; }
+  .sidebar { -webkit-print-color-adjust: exact; background: #334155 !important; }
+  .circle-bg { -webkit-print-color-adjust: exact; background: #475569 !important; }
+  .btn-pdf, .btn-add, .btn-del { display: none !important; }
+}

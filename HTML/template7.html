@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Academic CV - [YOUR NAME]</title>
+    <link rel="stylesheet" href="../CSS/style7.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">⬇ Export Elegant CV</button>
+
+    <div class="cv">
+        <header class="header">
+            <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+            <div class="subtitle" contenteditable="true">[YOUR PROFESSIONAL TITLE OR MAJOR]</div>
+            <div class="contacts">
+                <span contenteditable="true">[Email Address]</span>
+                <span contenteditable="true">[Phone Number]</span>
+                <span contenteditable="true">[City, Province]</span>
+            </div>
+        </header>
+
+        <div class="layout">
+            <main class="main">
+                <section class="section">
+                    <h2 class="section-title">Academic Profile</h2>
+                    <div class="entry-content" contenteditable="true">
+                        Distinguished scholar and professional with a deep commitment to excellence in [Your Field]. Extensive experience in research, project development, and academic leadership.
+                    </div>
+                </section>
+
+                <section class="section" id="sec-exp-academic">
+                    <h2 class="section-title">Professional Experience</h2>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-org" contenteditable="true">[Organization / Company Name]</span>
+                                <span class="entry-date" contenteditable="true">[Year — Present]</span>
+                            </div>
+                            <div class="entry-role" contenteditable="true">[Senior Job Position]</div>
+                            <div class="entry-content" contenteditable="true">
+                                • Orchestrated the [Project Name] involving [Number] stakeholders.<br>
+                                • Authored and presented findings at [X] international conferences.
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-exp-academic', 'entry')">+ Add Experience</button>
+                </section>
+
+                <section class="section" id="sec-edu-academic">
+                    <h2 class="section-title">Education</h2>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-org" contenteditable="true">[University or Academy Name]</span>
+                                <span class="entry-date" contenteditable="true">[Year — Year]</span>
+                            </div>
+                            <div class="entry-role" contenteditable="true">[Degree / Doctorate Name]</div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-edu-academic', 'entry')">+ Add Education</button>
+                </section>
+
+                <section class="section" id="sec-awards-academic">
+                    <h2 class="section-title">Awards & Honors</h2>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-content" contenteditable="true">• [Honor / Award Name] - [Issuing Body], [Year]</div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-awards-academic', 'entry')">+ Add Honor</button>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">References</h2>
+                    <div class="entry-content" contenteditable="true" style="font-style: italic;">
+                        Academic and professional references available upon request.
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="side-item">
+                    <span class="section-title">Personal</span>
+                    <div class="side-val" contenteditable="true"><b>DOB:</b> [Date Month Year]</div>
+                    <div class="side-val" contenteditable="true"><b>Gender:</b> [Male / Female]</div>
+                    <div class="side-val" contenteditable="true"><b>Status:</b> [Single / Married]</div>
+                    <div class="side-val" contenteditable="true"><b>Nationality:</b> [Nationality]</div>
+                </div>
+
+                <div class="side-item" id="sec-skills-academic">
+                    <span class="section-title">Core Skills</span>
+                    <div class="skills-list items-container">
+                        <div class="skill-item item-container">
+                            <span contenteditable="true">Critical Thinking</span>
+                            <div class="skill-dot"></div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-skills-elegant', 'skill-item')">+ Add Skill</button>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Software</h2>
+                    <div class="side-val" contenteditable="true">
+                        [Microsoft Office]<br>
+                        [Other Tools]
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart CV Builder</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-file-invoice"></i>
+                <span>CV PRO</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="fas fa-home"></i> My Resumes</a>
+                <a href="setting.html" class="nav-item"><i class="fas fa-layer-group"></i> Templates</a>
+                <a href="#" class="nav-item"><i class="fas fa-lightbulb"></i> HR Tips</a>
+                <a href="#" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=User&background=0f3d3e&color=fff" alt="User">
+                <div class="user-info">
+                    <span class="name">Guest User</span>
+                    <span class="plan">Free Plan</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search your CVs...">
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <input type="file" id="dashboard-import-file" accept=".json,.pdf,.png,.jpg,.jpeg" style="display: none;">
+                    <button class="btn-secondary" onclick="document.getElementById('dashboard-import-file').click()" style="background: white; border: 1px solid #ccc; padding: 10px 20px; border-radius: 8px; cursor: pointer; color: #333;">
+                        <i class="fas fa-file-import"></i> Import CV (PDF/Image/JSON)
+                    </button>
+                    <button class="btn-create" onclick="location.href='setting.html'">
+                        <i class="fas fa-plus"></i> Create New CV
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="welcome-sec">
+                    <h1>Welcome back, <span id="username">Friend</span>!</h1>
+                    <p>You have <span class="highlight">3 active resumes</span>. All are optimized for HR standards.</p>
+                </div>
+
+
+                <!-- Stats/Tips Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="icon-box blue"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-info">
+                            <h3>HR Strength</h3>
+                            <p>Average 92%</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box gold"><i class="fas fa-eye"></i></div>
+                        <div class="stat-info">
+                            <h3>Views</h3>
+                            <p>12 Total</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box green"><i class="fas fa-download"></i></div>
+                        <div class="stat-info">
+                            <h3>Downloads</h3>
+                            <p>5 Times</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CV List Section -->
+                <section class="cv-section">
+                    <div class="sec-header">
+                        <h2>My Resumes</h2>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="cv-grid">
+                        <!-- CV Card 1 -->
+                        <div class="cv-card">
+                            <div class="cv-preview">
+                                <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=400&auto=format&fit=crop" alt="CV Preview">
+                                <div class="overlay">
+                                    <button onclick="location.href='template1.html'">Edit Now</button>
+                                </div>
+                            </div>
+                            <div class="cv-details">
+                                <h3>Software Engineer CV</h3>
+                                <p>Last edited: 2 hours ago</p>
+                                <div class="card-footer">
+                                    <span class="tag">Standard</span>
+                                    <div class="actions">
+                                        <i class="fas fa-copy" title="Duplicate"></i>
+                                        <i class="fas fa-trash" title="Delete"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CV Card 2 -->
+                        <div class="cv-card">
+                            <div class="cv-preview">
+                                <img src="https://images.unsplash.com/photo-1626197031507-c17099753214?q=80&w=400&auto=format&fit=crop" alt="CV Preview">
+                                <div class="overlay">
+                                    <button onclick="location.href='template8.html'">Edit Now</button>
+                                </div>
+                            </div>
+                            <div class="cv-details">
+                                <h3>Premium Designer CV</h3>
+                                <p>Last edited: Yesterday</p>
+                                <div class="card-footer">
+                                    <span class="tag premium">Premium</span>
+                                    <div class="actions">
+                                        <i class="fas fa-copy" title="Duplicate"></i>
+                                        <i class="fas fa-trash" title="Delete"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CV Card 3 -->
+                        <div class="cv-card">
+                            <div class="cv-preview">
+                                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=400&auto=format&fit=crop" alt="CV Preview">
+                                <div class="overlay">
+                                    <button onclick="location.href='template3.html'">Edit Now</button>
+                                </div>
+                            </div>
+                            <div class="cv-details">
+                                <h3>Executive Resume</h3>
+                                <p>Last edited: 3 days ago</p>
+                                <div class="card-footer">
+                                    <span class="tag">Executive</span>
+                                    <div class="actions">
+                                        <i class="fas fa-copy" title="Duplicate"></i>
+                                        <i class="fas fa-trash" title="Delete"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.getElementById('dashboard-import-file').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const fileName = file.name.toLowerCase();
+
+            // JSON files: parse directly and redirect
+            if (fileName.endsWith('.json')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        localStorage.removeItem('cv_profile_img');
+                        localStorage.removeItem('cv_pending_import');
+                        localStorage.setItem('cv_builder_data', JSON.stringify(data));
+                        window.location.href = 'editor.html';
+                    } catch (err) {
+                        console.error("Failed to parse JSON", err);
+                        alert("❌ Invalid JSON file.");
+                    }
+                };
+                reader.readAsText(file);
+                return;
+            }
+
+            // PDF / Image files: store as base64 in localStorage, redirect to editor
+            if (fileName.endsWith('.pdf') || /\.(png|jpe?g)$/i.test(fileName)) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    localStorage.removeItem('cv_builder_data');
+                    localStorage.removeItem('cv_profile_img');
+                    localStorage.setItem('cv_pending_import', JSON.stringify({
+                        name: file.name,
+                        type: file.type,
+                        data: event.target.result
+                    }));
+                    window.location.href = 'editor.html';
+                };
+                reader.readAsDataURL(file);
+                return;
+            }
+
+            alert('❌ Unsupported file type. Please use PDF, PNG, JPG, or JSON.');
+        });
+    </script>
+</body>
+</html>

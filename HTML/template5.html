@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Professional CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/style5.css" />
+  </head>
+  <body>
+    <button class="btn-pdf" onclick="window.print()">⬇ Export Premium Resume</button>
+
+    <div class="cv">
+      <!-- Sophisticated Header -->
+      <header class="p-header">
+        <div class="header-inner">
+          <div class="name-block">
+            <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+            <div class="p-title" contenteditable="true">[YOUR PROFESSIONAL TITLE]</div>
+          </div>
+          <div class="contact-block">
+            <div contenteditable="true">✉ [your.email@example.com]</div>
+            <div contenteditable="true">📞 [+855 00 000 000]</div>
+            <div contenteditable="true">📍 [City, Province]</div>
+          </div>
+        </div>
+        <div class="gold-divider"></div>
+      </header>
+
+      <div class="p-body">
+        <!-- Sidebar -->
+        <aside class="p-side">
+          <div class="p-photo-wrap" onclick="document.getElementById('p-up').click()">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" id="p-img" />
+            <input type="file" id="p-up" style="display:none" onchange="previewP(this)">
+          </div>
+
+          <div class="p-side-sec">
+            <div class="p-side-label">Personal Details</div>
+            <div class="p-lang" contenteditable="true"><b>DOB:</b> [Date Month Year]</div>
+            <div class="p-lang" contenteditable="true"><b>Gender:</b> [Male / Female]</div>
+            <div class="p-lang" contenteditable="true"><b>Status:</b> [Single / Married]</div>
+            <div class="p-lang" contenteditable="true"><b>Nationality:</b> [Nationality]</div>
+          </div>
+
+          <div class="p-side-sec" id="sec-skills-p">
+            <div class="p-side-label">Expertise</div>
+            <div class="items-container">
+              <div class="p-skill item-container">
+                <div class="p-skill-info"><span contenteditable="true">Leadership</span> <span contenteditable="true">95%</span></div>
+                <div class="p-bar-bg"><div class="p-bar-fill" style="width: 95%"></div></div>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-skills-p', 'p-skill')">+ Add Skill</button>
+          </div>
+
+          <div class="p-side-sec" id="sec-lang-p">
+            <div class="p-side-label">Languages</div>
+            <div class="items-container">
+              <div class="p-lang item-container">
+                <span contenteditable="true">Khmer (Native)</span>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+              <div class="p-lang item-container">
+                <span contenteditable="true">English (Fluent)</span>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-lang-p', 'p-lang')">+ Add Language</button>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="p-main">
+          <section class="p-sec">
+            <div class="p-label">Executive Summary</div>
+            <div style="font-size: 11pt; line-height: 1.8; text-align: justify;" contenteditable="true">
+              Visionary executive with [X] years of experience in [Industry]. Expertise in operational optimization, strategic planning, and building high-performance cultures that consistently exceed revenue targets.
+            </div>
+          </section>
+
+          <section class="p-sec" id="sec-exp-p">
+            <div class="p-label">Professional History</div>
+            <div class="items-container">
+              <div class="p-entry item-container">
+                <div class="p-entry-header">
+                  <div class="p-entry-org" contenteditable="true">[Company Name]</div>
+                  <div class="p-entry-date" contenteditable="true">[Year — Present]</div>
+                </div>
+                <div class="p-entry-role" contenteditable="true">[Executive Job Position]</div>
+                <ul class="p-entry-bullets">
+                  <li contenteditable="true">Spearheaded the [Project Name] which resulted in a [X]% increase in market share.</li>
+                  <li contenteditable="true">Optimized workflow processes, reducing costs by $[X]k annually.</li>
+                </ul>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-exp-p', 'p-entry')">+ Add Experience</button>
+          </section>
+
+          <section class="p-sec" id="sec-edu-p">
+            <div class="p-label">Academic Background</div>
+            <div class="items-container">
+              <div class="p-entry item-container">
+                <div class="p-entry-header">
+                  <div class="p-entry-org" contenteditable="true">[Degree Name / Major]</div>
+                  <div class="p-entry-date" contenteditable="true">[Year — Year]</div>
+                </div>
+                <div class="p-entry-role" contenteditable="true">[University or School Name]</div>
+                <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+              </div>
+            </div>
+            <button class="btn-add" onclick="addItem('sec-edu-p', 'p-entry')">+ Add Education</button>
+          </section>
+
+          <section class="p-sec">
+            <div class="p-label">References</div>
+            <div style="font-size: 10.5pt; color: #636e72; font-style: italic;" contenteditable="true">
+              Elite professional references available upon request.
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+      function previewP(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) { document.getElementById("p-img").src = e.target.result; };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

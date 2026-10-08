@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structured Grid - Template 13</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style13.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">Export CV 13</button>
+    <div class="cv">
+        <header class="header">
+            <h1 contenteditable="true">RICHARD SANCHEZ</h1>
+            <h2 contenteditable="true">WEB DEVELOPER</h2>
+        </header>
+
+        <div class="grid-layout">
+            <div class="col-left">
+                <section class="sec" id="sec-edu13">
+                    <h3 class="label">EDUCATION</h3>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-date" contenteditable="true">2014 — 2018</div>
+                            <div class="entry-title" contenteditable="true">University of Really Great</div>
+                            <div class="entry-text" contenteditable="true">Master of IT, Major in Technology</div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-edu13', 'entry')">+ Add Education</button>
+                </section>
+
+                <section class="sec" id="sec-exp13">
+                    <h3 class="label">EXPERIENCE</h3>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-title" contenteditable="true">Applications Developer</div>
+                            <div class="entry-org" contenteditable="true">Really Great Company | 2018 — Present</div>
+                            <div class="entry-text" contenteditable="true">
+                                • Built the logic for a streamlined ad-serving platform.<br>
+                                • Managed database administration and website design.
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-exp13', 'entry')">+ Add Experience</button>
+                </section>
+            </div>
+
+            <div class="col-right">
+                <section class="sec">
+                    <h3 class="label">CONTACT</h3>
+                    <div class="contact-item"><i class="fas fa-phone"></i> [Phone Number]</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> [Email Address]</div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> [City, Province]</div>
+                </section>
+
+                <section class="sec">
+                    <h3 class="label">SUMMARY</h3>
+                    <div class="entry-text" contenteditable="true" style="text-align: justify;">
+                        I am a qualified and professional web developer with five years of experience in database administration and website design. Strong creative and analytical skills. Team player with an eye for detail.
+                    </div>
+                </section>
+
+                <section class="sec" id="sec-skills13">
+                    <h3 class="label">SKILLS</h3>
+                    <div class="items-container skill-grid">
+                        <div class="skill-pill item-container" contenteditable="true">
+                            Web Design
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                        <div class="skill-pill item-container" contenteditable="true">
+                            Backend Tech
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-skills13', 'skill-pill')">+ Add Skill</button>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+</body>
+</html>

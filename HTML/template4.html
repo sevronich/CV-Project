@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimalist CV Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/style4.css" />
+  </head>
+  <body>
+    <button class="btn-pdf" onclick="window.print()">⬇ Download Minimalist PDF</button>
+
+    <div class="cv">
+      <!-- Stunning Header -->
+      <header class="mini-header">
+        <div class="profile-photo">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+        </div>
+        <div class="header-content">
+          <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+          <p class="subtitle" contenteditable="true">[YOUR PROFESSIONAL TITLE]</p>
+          <div class="mini-contacts">
+            <span contenteditable="true">[your.email@example.com]</span>
+            <span contenteditable="true">[+855 00 000 000]</span>
+            <span contenteditable="true">[City, Province]</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="cv-main">
+        <section class="mini-section" id="sec-about">
+          <h2 class="sec-heading">Professional Profile</h2>
+          <p class="about-text" contenteditable="true">
+            [Briefly summarize your professional background and goals. Focus on what makes you a great candidate.]
+          </p>
+        </section>
+
+        <section class="mini-section" id="sec-personal">
+          <h2 class="sec-heading">Personal Details</h2>
+          <div class="personal-grid">
+            <div class="personal-item" contenteditable="true"><b>DOB:</b> [Date Month Year]</div>
+            <div class="personal-item" contenteditable="true"><b>Gender:</b> [Male / Female]</div>
+            <div class="personal-item" contenteditable="true"><b>Status:</b> [Single / Married]</div>
+            <div class="personal-item" contenteditable="true"><b>Nationality:</b> [Nationality]</div>
+          </div>
+        </section>
+
+        <section class="mini-section" id="sec-work">
+          <h2 class="sec-heading">Professional Experience</h2>
+          <div class="items-container">
+            <div class="work-item item-container">
+              <div class="work-header">
+                <span class="company" contenteditable="true">[Company Name]</span>
+                <span class="duration" contenteditable="true">[Year — Present]</span>
+              </div>
+              <div class="role" contenteditable="true">[Job Position / Title]</div>
+              <p class="work-desc" contenteditable="true">
+                • Increased team productivity by [X]% through implementing [Methodology].<br>
+                • Managed end-to-end lifecycle of [Project Name] with a budget of $[X]k.
+              </p>
+              <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+            </div>
+          </div>
+          <button class="btn-add" onclick="addItem('sec-work', 'work-item')">+ Add Experience</button>
+        </section>
+
+        <section class="mini-section" id="sec-education">
+          <h2 class="sec-heading">Education</h2>
+          <div class="items-container">
+            <div class="work-item item-container">
+              <div class="work-header">
+                <span class="company" contenteditable="true">[University or School Name]</span>
+                <span class="duration" contenteditable="true">[Year — Year]</span>
+              </div>
+              <div class="role" contenteditable="true">[Degree / Major Name]</div>
+              <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+            </div>
+          </div>
+          <button class="btn-add" onclick="addItem('sec-education', 'work-item')">+ Add Education</button>
+        </section>
+
+        <section class="mini-section" id="sec-awards-mini">
+          <h2 class="sec-heading">Awards & Honors</h2>
+          <div class="items-container">
+            <div class="work-item item-container">
+              <div class="work-desc" contenteditable="true">• [Award / Certificate Name] - [Issuing Organization], [Year]</div>
+              <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+            </div>
+          </div>
+          <button class="btn-add" onclick="addItem('sec-awards-mini', 'work-item')">+ Add Award</button>
+        </section>
+
+        <section class="mini-section">
+          <h2 class="sec-heading">References</h2>
+          <p class="about-text" contenteditable="true" style="font-style: italic; font-size: 10pt;">
+            Professional references available upon request.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+  </body>
+</html>

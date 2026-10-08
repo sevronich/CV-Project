@@ -1,0 +1,177 @@
+/* Template 12 - Dynamic Geometric */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #cbd5e1;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  color: #1a1a1a;
+}
+
+.cv {
+  width: 210mm;
+  height: 297mm;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Geometric Shapes */
+.top-shapes {
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%; height: 250px;
+  z-index: 1;
+}
+
+.shape-1 {
+  position: absolute;
+  top: 0; right: 0;
+  width: 60%; height: 100%;
+  background: #1a1a1a;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 40% 100%);
+}
+
+.shape-2 {
+  position: absolute;
+  top: 0; right: 0;
+  width: 55%; height: 85%;
+  background: #f97316; /* Orange */
+  clip-path: polygon(25% 0, 100% 0, 100% 75%, 45% 100%);
+  opacity: 0.9;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 2;
+  padding: 60px 80px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.photo-wrap {
+  width: 180px;
+  height: 230px;
+  border: 8px solid #f97316;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+.header-info h1 {
+  font-size: 38pt;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.header-info h2 {
+  font-size: 16pt;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 5px;
+}
+
+.header-contacts {
+  margin-top: 30px;
+  color: #f97316;
+  font-size: 9pt;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-contacts i { width: 20px; color: #1a1a1a; }
+
+/* Body Layout */
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  padding: 40px 80px;
+  gap: 60px;
+  background: white;
+}
+
+.sec { margin-bottom: 40px; }
+
+.label-black {
+  background: #1a1a1a;
+  color: white;
+  padding: 10px 25px;
+  font-size: 11pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 25px;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+
+.label-orange {
+  background: #f97316;
+  color: white;
+  padding: 10px 25px;
+  font-size: 11pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  margin-bottom: 25px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.text-block { font-size: 10pt; line-height: 1.7; color: #4b5563; }
+.skill-pill { font-size: 9pt; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+
+.exp-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.exp-dot {
+  width: 15px; height: 15px;
+  background: #f97316;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.exp-role { font-weight: 800; font-size: 11pt; text-transform: uppercase; color: #1a1a1a; }
+.exp-date { font-weight: 700; color: #f97316; font-size: 9pt; margin-bottom: 5px; }
+.exp-text { font-size: 9.5pt; line-height: 1.6; color: #4b5563; }
+
+/* Buttons */
+.btn-pdf { position: fixed; bottom: 30px; right: 30px; background: #1a1a1a; color: white; padding: 15px 30px; border: none; border-radius: 4px; cursor: pointer; font-weight: 800; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.btn-add { background: none; border: 1px dashed #f97316; color: #f97316; padding: 5px 12px; font-size: 8pt; border-radius: 4px; cursor: pointer; margin-top: 10px; opacity: 0; }
+.sec:hover .btn-add { opacity: 1; }
+
+.btn-del { position: absolute; right: -15px; top: 0; background: #ef4444; color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.2s; }
+.item-container:hover .btn-del { opacity: 1; }
+.item-container { position: relative; transition: background 0.2s; border-radius: 8px; }
+
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: none; padding: 0; }
+  .cv { width: 210mm !important; height: 297mm !important; box-shadow: none; border: none; }
+  .shape-1, .shape-2 { -webkit-print-color-adjust: exact; }
+  .label-black, .label-orange { -webkit-print-color-adjust: exact; }
+  .btn-pdf, .btn-add, .btn-del { display: none !important; }
+}

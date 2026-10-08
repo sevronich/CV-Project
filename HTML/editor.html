@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Editor - CV PRO</title>
+    <link rel="stylesheet" href="../CSS/editor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="editor-container">
+        <!-- Step Navigation -->
+        <aside class="editor-nav">
+            <div class="back-link" onclick="location.href='dashboard.html'">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </div>
+            
+            <div class="nav-group">
+                <span class="group-label">CORE FIELDS (Required)</span>
+                <div class="nav-step active" data-step="personal">
+                    <i class="fas fa-id-card"></i> Personal Info
+                </div>
+                <div class="nav-step" data-step="contact">
+                    <i class="fas fa-address-book"></i> Contact
+                </div>
+                <div class="nav-step" data-step="experience">
+                    <i class="fas fa-briefcase"></i> Experience
+                </div>
+                <div class="nav-step" data-step="education">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </div>
+            </div>
+
+            <div class="nav-group">
+                <span class="group-label">OPTIONAL (The Decider)</span>
+                <div class="nav-step" data-step="skills">
+                    <i class="fas fa-tools"></i> Skills & Languages
+                </div>
+                <div class="nav-step" data-step="certifications">
+                    <i class="fas fa-certificate"></i> Certifications
+                </div>
+                <div class="nav-step" data-step="projects">
+                    <i class="fas fa-project-diagram"></i> Projects & Interests
+                </div>
+            </div>
+
+            <div class="data-actions" style="margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px;">
+                <input type="file" id="import-file" accept=".json,.pdf,.png,.jpg,.jpeg" style="display: none;">
+                <button class="btn-import-cv" onclick="document.getElementById('import-file').click()">
+                    <i class="fas fa-file-import"></i> Import CV (PDF/Image/JSON)
+                </button>
+                <button class="btn-export-cv" id="export-btn">
+                    <i class="fas fa-file-export"></i> Export CV Data
+                </button>
+                <button class="btn-clear-cv" onclick="clearCVData()" style="width:100%; padding:10px; margin-top:8px; border-radius:8px; background:#fee2e2; color:#ef4444; border:1px solid #fca5a5; cursor:pointer; font-weight:600; font-family:inherit; transition:0.2s;">
+                    <i class="fas fa-trash-alt"></i> Clear Data
+                </button>
+            </div>
+
+            <button class="btn-finish" onclick="location.href='template1.html'">
+                <i class="fas fa-check-double"></i> Finish & Preview
+            </button>
+        </aside>
+
+        <!-- Form Area -->
+        <main class="form-area">
+            <header class="form-header">
+                <div class="step-title">
+                    <h2 id="current-step-name">Personal Info</h2>
+                    <p id="current-step-subtitle">Basic details to help HR contact you.</p>
+                </div>
+                <div class="strength-meter">
+                    <span>CV Strength</span>
+                    <div class="bar-bg"><div class="bar-fill" id="strength-bar" style="width: 15%"></div></div>
+                </div>
+            </header>
+
+            <div class="input-container">
+                <!-- ==================== SECTION 1: Personal Info ==================== -->
+                <div class="step-form active" id="form-personal">
+                    <div class="input-row">
+                        <div class="field">
+                            <label>Full Name</label>
+                            <input type="text" id="cv-name" placeholder="Enter your full name">
+                        </div>
+                        <div class="field">
+                            <label>Professional Title</label>
+                            <input type="text" id="cv-title" placeholder="e.g. Senior Web Developer">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="field">
+                            <label>Gender</label>
+                            <select id="cv-gender">
+                                <option value="">-- Select --</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Date of Birth</label>
+                            <input type="text" id="cv-dob" placeholder="e.g. 15 January 2000">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="field">
+                            <label>Nationality</label>
+                            <input type="text" id="cv-nationality" placeholder="e.g. Cambodian">
+                        </div>
+                        <div class="field">
+                            <label>Marital Status</label>
+                            <select id="cv-marital">
+                                <option value="">-- Select --</option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field" style="margin-top:10px;">
+                        <label>Professional Summary / About Me</label>
+                        <textarea id="cv-summary" rows="4" placeholder="Write a short professional introduction"></textarea>
+                    </div>
+                </div>
+
+                <!-- ==================== SECTION 2: Contact ==================== -->
+                <div class="step-form" id="form-contact">
+                    <div class="input-row">
+                        <div class="field">
+                            <label>Email Address</label>
+                            <input type="email" id="cv-email" placeholder="your.email@example.com">
+                        </div>
+                        <div class="field">
+                            <label>Phone Number</label>
+                            <input type="tel" id="cv-phone" placeholder="+855 12 345 678">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="field">
+                            <label>Current Address</label>
+                            <input type="text" id="cv-address" placeholder="e.g. Khan Chamkarmon, Phnom Penh">
+                        </div>
+                        <div class="field">
+                            <label>Hometown</label>
+                            <input type="text" id="cv-hometown" placeholder="e.g. Kampong Cham Province">
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="field">
+                            <label>LinkedIn / Portfolio</label>
+                            <input type="text" id="cv-linkedin" placeholder="https://linkedin.com/in/yourname">
+                        </div>
+                        <div class="field">
+                            <label>Facebook / Telegram</label>
+                            <input type="text" id="cv-social" placeholder="@yourhandle">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== SECTION 3: Work Experience ==================== -->
+                <div class="step-form" id="form-experience">
+                    <div id="experience-entries">
+                        <div class="entry-block">
+                            <div class="entry-block-header">
+                                <span class="entry-number">Experience #1</span>
+                                <button class="btn-remove-entry" onclick="removeEntry(this)" title="Remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="input-row">
+                                <div class="field">
+                                    <label>Company / Organization</label>
+                                    <input type="text" class="exp-company" placeholder="e.g. Smart Axiata">
+                                </div>
+                                <div class="field">
+                                    <label>Position / Title</label>
+                                    <input type="text" class="exp-position" placeholder="e.g. Software Engineer">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="field">
+                                    <label>Duration</label>
+                                    <input type="text" class="exp-duration" placeholder="e.g. Jan 2022 - Present">
+                                </div>
+                            </div>
+                            <div class="field" style="margin-top:10px;">
+                                <label>Responsibilities & Achievements</label>
+                                <textarea class="exp-details" rows="4" placeholder="• Led a team of 5 developers...&#10;• Increased revenue by 20%..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-add-entry" onclick="addExperienceEntry()">
+                        <i class="fas fa-plus"></i> Add Another Experience
+                    </button>
+                </div>
+
+                <!-- ==================== SECTION 4: Education ==================== -->
+                <div class="step-form" id="form-education">
+                    <div id="education-entries">
+                        <div class="entry-block">
+                            <div class="entry-block-header">
+                                <span class="entry-number">Education #1</span>
+                                <button class="btn-remove-entry" onclick="removeEntry(this)" title="Remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="input-row">
+                                <div class="field">
+                                    <label>University / School</label>
+                                    <input type="text" class="edu-school" placeholder="e.g. Royal University of Phnom Penh">
+                                </div>
+                                <div class="field">
+                                    <label>Degree / Major</label>
+                                    <input type="text" class="edu-degree" placeholder="e.g. Bachelor of Computer Science">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="field">
+                                    <label>Year</label>
+                                    <input type="text" class="edu-year" placeholder="e.g. 2018 - 2022">
+                                </div>
+                                <div class="field">
+                                    <label>GPA (optional)</label>
+                                    <input type="text" class="edu-gpa" placeholder="e.g. 3.5 / 4.0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-add-entry" onclick="addEducationEntry()">
+                        <i class="fas fa-plus"></i> Add Another Education
+                    </button>
+                </div>
+
+                <!-- ==================== SECTION 5: Skills & Languages ==================== -->
+                <div class="step-form" id="form-skills">
+                    <div class="field" style="margin-bottom:20px;">
+                        <label>Technical Skills</label>
+                        <textarea id="cv-tech-skills" rows="3" placeholder="e.g. JavaScript, Python, React, Figma, Adobe Photoshop"></textarea>
+                    </div>
+                    <div class="field" style="margin-bottom:20px;">
+                        <label>Soft Skills</label>
+                        <textarea id="cv-soft-skills" rows="3" placeholder="e.g. Leadership, Teamwork, Communication, Problem Solving"></textarea>
+                    </div>
+                    <h3 style="margin-bottom:15px; font-size:1rem; color:#1e293b;">Languages</h3>
+                    <div id="language-entries">
+                        <div class="input-row">
+                            <div class="field">
+                                <label>Language</label>
+                                <input type="text" class="lang-name-input" placeholder="e.g. Khmer">
+                            </div>
+                            <div class="field">
+                                <label>Level</label>
+                                <select class="lang-level-input">
+                                    <option value="Native">Native</option>
+                                    <option value="Professional">Professional</option>
+                                    <option value="Advanced">Advanced</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Basic">Basic</option>
+                                    <option value="Little">Little</option>
+                                    <option value="Limited">Limited</option>
+                                    <option value="Beginner">Beginner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="field">
+                                <label>Language</label>
+                                <input type="text" class="lang-name-input" placeholder="e.g. English">
+                            </div>
+                            <div class="field">
+                                <label>Level</label>
+                                <select class="lang-level-input">
+                                    <option value="Native">Native</option>
+                                    <option value="Professional" selected>Professional</option>
+                                    <option value="Advanced">Advanced</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Basic">Basic</option>
+                                    <option value="Little">Little</option>
+                                    <option value="Limited">Limited</option>
+                                    <option value="Beginner">Beginner</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-add-entry" onclick="addLanguageEntry()">
+                        <i class="fas fa-plus"></i> Add Language
+                    </button>
+                </div>
+
+                <!-- ==================== SECTION 6: Certifications ==================== -->
+                <div class="step-form" id="form-certifications">
+                    <div id="cert-entries">
+                        <div class="entry-block">
+                            <div class="entry-block-header">
+                                <span class="entry-number">Certification #1</span>
+                                <button class="btn-remove-entry" onclick="removeEntry(this)" title="Remove">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="input-row">
+                                <div class="field">
+                                    <label>Certificate / Course Name</label>
+                                    <input type="text" class="cert-name" placeholder="e.g. AWS Cloud Practitioner">
+                                </div>
+                                <div class="field">
+                                    <label>Issuing Organization</label>
+                                    <input type="text" class="cert-org" placeholder="e.g. Amazon Web Services">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div class="field">
+                                    <label>Year Obtained</label>
+                                    <input type="text" class="cert-year" placeholder="e.g. 2023">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-add-entry" onclick="addCertEntry()">
+                        <i class="fas fa-plus"></i> Add Another Certification
+                    </button>
+                </div>
+
+                <!-- ==================== SECTION 7: Projects & Interests ==================== -->
+                <div class="step-form" id="form-projects">
+                    <div class="field" style="margin-bottom:20px;">
+                        <label>Projects / Volunteer Work</label>
+                        <textarea id="cv-projects" rows="4" placeholder="• Built a CV Builder web app using HTML/CSS/JS&#10;• Volunteered as English teacher at local NGO"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Hobbies & Interests</label>
+                        <textarea id="cv-hobbies" rows="3" placeholder="e.g. Reading, Coding, Photography, Traveling"></textarea>
+                    </div>
+                    <div class="field" style="margin-top:20px;">
+                        <label>Additional Imported Content</label>
+                        <textarea id="cv-imported-text" rows="8" placeholder="Unmapped text from an imported CV will be preserved here."></textarea>
+                        <small style="color:#64748b;">Nothing extracted from an imported CV is discarded.</small>
+                    </div>
+                    <div class="field" style="margin-top:20px;">
+                        <label>Auto-detected Sections</label>
+                        <div id="additional-sections"></div>
+                        <button class="btn-add-entry" type="button" onclick="addAdditionalSection()" style="margin-top:10px;">
+                            <i class="fas fa-plus"></i> Add Custom Section
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button class="btn-secondary" id="btn-prev" style="display:none;">
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button class="btn-primary" id="btn-next">
+                    Next Step <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </main>
+
+        <!-- HR Assistant Sidebar -->
+        <aside class="assistant-sidebar">
+            <div class="assistant-card">
+                <div class="assistant-header">
+                    <i class="fas fa-robot"></i>
+                    <span>HR Assistant</span>
+                </div>
+                <div class="assistant-content">
+                    <p id="assistant-tip">
+                        <strong>Pro Tip:</strong> ក្នុងផ្នែកព័ត៌មានទំនាក់ទំនង សូមប្រើអ៊ីមែលដែលមានលក្ខណៈអាជីព (ឧទាហរណ៍៖ name.last@email.com)។ ជៀសវាងការប្រើឈ្មោះហៅក្រៅដែលនាំឱ្យបាត់បង់ទំនុកចិត្តពី HR។
+                    </p>
+                </div>
+            </div>
+
+            <div class="preview-mini">
+                <span>Real-time Preview</span>
+                <div class="mini-cv-box">
+                    <div class="mini-header"></div>
+                    <div class="mini-line"></div>
+                    <div class="mini-line"></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Import Modal Overlay -->
+    <div id="import-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+        <div style="background:white; border-radius:16px; padding:40px; max-width:460px; width:90%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+            <div id="import-spinner" style="margin-bottom:20px;">
+                <i class="fas fa-spinner fa-spin" style="font-size:48px; color:#0f3d3e;"></i>
+            </div>
+            <h3 id="import-status" style="margin:0 0 10px; color:#0f3d3e; font-size:18px;">Extracting text from your CV...</h3>
+            <p id="import-detail" style="color:#666; font-size:14px; margin:0;">This may take a moment for image files.</p>
+            <div id="import-progress-bar" style="margin-top:20px; background:#eee; border-radius:8px; height:8px; overflow:hidden;">
+                <div id="import-progress-fill" style="background:linear-gradient(90deg,#0f3d3e,#2a9d8f); height:100%; width:0%; transition:width 0.3s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="../JS/editor.js?v=20260830-10"></script>
+</body>
+</html>

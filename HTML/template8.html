@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Curve CV - Template 8</title>
+    <link rel="stylesheet" href="../CSS/style8.css">
+    <!-- Font Awesome for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">Download Premium CV</button>
+
+    <div class="cv">
+        <header class="header">
+            <div class="header-content">
+                <h1 contenteditable="true">LUCIA SMITH</h1>
+                <div class="role" contenteditable="true">Graphic Designer</div>
+            </div>
+        </header>
+
+        <div class="main-body">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-img-container" onclick="document.getElementById('up8').click()">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000" id="img8">
+                    <input type="file" id="up8" style="display:none" onchange="prev8(this)">
+                </div>
+
+                <div class="side-sec">
+                    <span class="side-label">Personal Info</span>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar"></i>
+                        <span contenteditable="true">01 Jan 1995</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-venus-mars"></i>
+                        <span contenteditable="true">[Male / Female] / [Single / Married]</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-flag"></i>
+                        <span contenteditable="true">Khmer / Cambodian</span>
+                    </div>
+                </div>
+
+                <div class="side-sec">
+                    <span class="side-label">Contact</span>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span contenteditable="true">[Phone Number]</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span contenteditable="true">hello@reallygreatsite.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span contenteditable="true">www.reallygreatsite.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span contenteditable="true">123 Anywhere St., Any City</span>
+                    </div>
+                </div>
+
+                <div class="side-sec" id="sec-skills8">
+                    <span class="side-label">Software Skills</span>
+                    <div class="items-container">
+                        <div class="skill-item item-container">
+                            <div class="skill-info">
+                                <span contenteditable="true">Adobe Photoshop</span>
+                                <span class="lang-level" contenteditable="true">90%</span>
+                            </div>
+                            <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                        <div class="skill-item item-container">
+                            <div class="skill-info">
+                                <span contenteditable="true">Adobe Illustrator</span>
+                                <span class="lang-level" contenteditable="true">85%</span>
+                            </div>
+                            <div class="bar-bg"><div class="bar-fill" style="width: 85%"></div></div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-skills8', 'skill-item')">+ Add Skill</button>
+                </div>
+
+                <div class="side-sec" id="sec-lang8">
+                    <span class="side-label">Languages</span>
+                    <div class="items-container">
+                        <div class="skill-item item-container">
+                            <div class="skill-info">
+                                <span contenteditable="true">English</span>
+                                <span class="lang-level" contenteditable="true">Expert</span>
+                            </div>
+                            <div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-lang8', 'skill-item')">+ Add Language</button>
+                </div>
+            </aside>
+
+            <!-- Main -->
+            <main class="main-content">
+                <section class="content-sec">
+                    <h2 class="content-label">Profile</h2>
+                    <p class="summary-text" contenteditable="true">
+                        Creative and detail-oriented Graphic Designer with over 5 years of experience in brand identity and digital marketing. Passionate about creating visually stunning designs that communicate powerful messages. Proven track record of delivering high-quality projects under tight deadlines.
+                    </p>
+                </section>
+
+                <section class="content-sec" id="sec-exp8">
+                    <h2 class="content-label">Work Experience</h2>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-title" contenteditable="true">Senior Graphic Designer</span>
+                                <span class="entry-date" contenteditable="true">2021 — Present</span>
+                            </div>
+                            <div class="entry-org" contenteditable="true">Studio Creative Co.</div>
+                            <div class="entry-desc" contenteditable="true">
+                                • Led a design team of 5 to develop branding for global clients.<br>
+                                • Reduced production time by 20% by streamlining the creative workflow.<br>
+                                • Oversaw the visual direction for major social media campaigns.
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-title" contenteditable="true">Junior Designer</span>
+                                <span class="entry-date" contenteditable="true">2018 — 2021</span>
+                            </div>
+                            <div class="entry-org" contenteditable="true">Digital Edge Agency</div>
+                            <div class="entry-desc" contenteditable="true">
+                                • Assisted in the creation of web layouts and promotional banners.<br>
+                                • Managed client revisions and ensured final artwork met brand guidelines.
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-exp8', 'entry')">+ Add Experience</button>
+                </section>
+
+                <section class="content-sec" id="sec-edu8">
+                    <h2 class="content-label">Education</h2>
+                    <div class="items-container">
+                        <div class="entry item-container">
+                            <div class="entry-header">
+                                <span class="entry-title" contenteditable="true">Bachelor of Fine Arts in Design</span>
+                                <span class="entry-date" contenteditable="true">2014 — 2018</span>
+                            </div>
+                            <div class="entry-org" contenteditable="true">University of Arts & Design</div>
+                            <div class="entry-desc" contenteditable="true">
+                                Specialized in Visual Communication and Typography. Graduated with Honors.
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-edu8', 'entry')">+ Add Education</button>
+                </section>
+
+                <section class="content-sec">
+                    <h2 class="content-label">References</h2>
+                    <p class="summary-text" contenteditable="true" style="font-style: italic; color: #7f8c8d;">
+                        Professional references and portfolio available upon request.
+                    </p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+        function prev8(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('img8').src = e.target.result; };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

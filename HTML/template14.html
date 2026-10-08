@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Navy Sidebar - Template 14</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/style14.css">
+</head>
+<body>
+    <main class="cv" aria-label="Editable curriculum vitae">
+        <aside class="sidebar">
+            <label class="photo-wrap" title="Click to change your photo">
+                <img id="profileImg" alt="Profile photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23dce7f1'/%3E%3Ccircle cx='200' cy='145' r='74' fill='%2394a9bd'/%3E%3Cpath d='M70 390c9-99 59-155 130-155s121 56 130 155' fill='%2394a9bd'/%3E%3Ctext x='200' y='375' text-anchor='middle' font-family='Arial' font-size='22' fill='%23243b55'%3EADD PHOTO%3C/text%3E%3C/svg%3E">
+                <span class="photo-hint"><i class="fa-solid fa-camera"></i> Change photo</span>
+                <input type="file" accept="image/*" onchange="previewImage(this)">
+            </label>
+
+            <section class="section compact-section" id="sec-contact14">
+                <h2>Contact</h2>
+                <div class="contact-list">
+                    <p contenteditable="true"><i class="fa-solid fa-phone"></i><span>[Phone Number]</span></p>
+                    <p contenteditable="true"><i class="fa-brands fa-telegram"></i><span>[Telegram Username]</span></p>
+                    <p contenteditable="true"><i class="fa-solid fa-envelope"></i><span>[your.email@example.com]</span></p>
+                    <p contenteditable="true"><i class="fa-solid fa-location-dot"></i><span>[Your Current Address]</span></p>
+                </div>
+            </section>
+
+            <section class="section compact-section" id="sec-personal14">
+                <h2>Personal Data</h2>
+                <dl class="personal-list">
+                    <div><dt>Nationality</dt><dd contenteditable="true">[Nationality]</dd></div>
+                    <div><dt>Sex</dt><dd contenteditable="true">[Male / Female]</dd></div>
+                    <div><dt>Marital Status</dt><dd contenteditable="true">[Single / Married]</dd></div>
+                    <div><dt>Date of Birth</dt><dd contenteditable="true">[Date Month Year]</dd></div>
+                    <div><dt>Place of Birth</dt><dd contenteditable="true">[City, Province]</dd></div>
+                </dl>
+            </section>
+
+            <section class="section compact-section editable-list" id="sec-soft-skills14">
+                <h2>Soft Skills</h2>
+                <div class="items-container">
+                    <div class="simple-item item-container"><span contenteditable="true">Management Skills</span><button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete skill">×</button></div>
+                    <div class="simple-item item-container"><span contenteditable="true">Communication</span><button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete skill">×</button></div>
+                    <div class="simple-item item-container"><span contenteditable="true">Critical Thinking</span><button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete skill">×</button></div>
+                    <div class="simple-item item-container"><span contenteditable="true">Leadership</span><button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete skill">×</button></div>
+                </div>
+                <button class="btn-add" type="button" onclick="addItem('sec-soft-skills14', 'simple-item')">+ Add Skill</button>
+            </section>
+
+            <section class="section compact-section editable-list" id="sec-languages14">
+                <h2>Languages</h2>
+                <div class="items-container">
+                    <div class="language-item item-container"><strong contenteditable="true">Khmer:</strong> <span class="lang-level" contenteditable="true">Native</span><button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete language">×</button></div>
+                    <div class="language-item item-container"><strong contenteditable="true">English:</strong> <span class="lang-level" contenteditable="true">Intermediate</span><button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete language">×</button></div>
+                </div>
+                <button class="btn-add" type="button" onclick="addItem('sec-languages14', 'language-item')">+ Add Language</button>
+            </section>
+        </aside>
+
+        <article class="content">
+            <header class="identity">
+                <h1 contenteditable="true">[YOUR FULL NAME]</h1>
+                <p>Position Apply For: <strong contenteditable="true">[YOUR PROFESSIONAL TITLE]</strong></p>
+            </header>
+
+            <section class="section" id="sec-about14">
+                <h2>About Me</h2>
+                <p class="body-copy" data-cv-field="summary" contenteditable="true">[Write your professional summary]</p>
+            </section>
+
+            <section class="section timeline-section" id="sec-education14">
+                <h2>Education Background</h2>
+                <div class="items-container">
+                    <div class="entry item-container">
+                        <div class="entry-date" contenteditable="true">2021–2025</div>
+                        <div class="entry-title" contenteditable="true">Bachelor's Degree</div>
+                        <div class="entry-org" contenteditable="true">[University Name]</div>
+                        <div class="entry-text" contenteditable="true">[Major and relevant academic achievement]</div>
+                        <button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete education">×</button>
+                    </div>
+                    <div class="entry item-container">
+                        <div class="entry-date" contenteditable="true">2018–2021</div>
+                        <div class="entry-title" contenteditable="true">High School Diploma</div>
+                        <div class="entry-org" contenteditable="true">[High School Name]</div>
+                        <div class="entry-text" contenteditable="true">[City, Province]</div>
+                        <button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete education">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" type="button" onclick="addItem('sec-education14', 'entry')">+ Add Education</button>
+            </section>
+
+            <section class="section timeline-section" id="sec-experience14">
+                <h2>Work Experience</h2>
+                <div class="items-container">
+                    <div class="entry item-container">
+                        <div class="entry-date" contenteditable="true">2023–Present</div>
+                        <div class="entry-title" contenteditable="true">[Job Position]</div>
+                        <div class="entry-org" contenteditable="true">[Company Name] | [City, Country]</div>
+                        <div class="entry-text" contenteditable="true">• Describe your main responsibility.<br>• Add a measurable achievement or result.</div>
+                        <button class="btn-del" type="button" onclick="this.parentElement.remove()" aria-label="Delete experience">×</button>
+                    </div>
+                </div>
+                <button class="btn-add" type="button" onclick="addItem('sec-experience14', 'entry')">+ Add Experience</button>
+            </section>
+
+            <div data-additional-sections></div>
+
+            <section class="section" id="sec-declaration14">
+                <h2>Declaration</h2>
+                <p class="body-copy" contenteditable="true">I certify that the information stated in this CV is true and correct. I understand that any misrepresentation may result in rejection of my application or dismissal from employment.</p>
+                <div class="signature-row">
+                    <span contenteditable="true">Date: [DD/MM/YYYY]</span>
+                    <span contenteditable="true">Signature: __________________</span>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Geometric - Template 12</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style12.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="btn-pdf" onclick="window.print()">Export CV 12</button>
+    <div class="cv">
+        <div class="top-shapes">
+            <div class="shape-1"></div>
+            <div class="shape-2"></div>
+        </div>
+
+        <header class="header">
+            <div class="photo-wrap" onclick="document.getElementById('up12').click()">
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800" id="img12">
+                <input type="file" id="up12" style="display:none" onchange="prev12(this)">
+            </div>
+            <div class="header-info">
+                <h1 contenteditable="true">DANIEL GALLEGO</h1>
+                <h2 contenteditable="true">Marketing Manager</h2>
+                <div class="header-contacts">
+                    <div contenteditable="true"><i class="fas fa-phone"></i> +855 00 000 000</div>
+                    <div contenteditable="true"><i class="fas fa-envelope"></i> hello@reallygreatsite.com</div>
+                    <div contenteditable="true"><i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="body">
+            <div class="left-col">
+                <section class="sec">
+                    <h3 class="label-black">About Me</h3>
+                    <div class="text-block" contenteditable="true">
+                        Dynamic and results-driven marketing professional with a passion for creative storytelling and strategic brand building. Proven expertise in digital marketing and market research.
+                    </div>
+                </section>
+
+                <section class="sec" id="sec-skills12">
+                    <h3 class="label-black">Skills</h3>
+                    <div class="items-container">
+                        <div class="skill-pill item-container" contenteditable="true">
+                            • Project Management
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-skills12', 'skill-pill')">+ Add Skill</button>
+                </section>
+
+                <section class="sec">
+                    <h3 class="label-black">Social Media</h3>
+                    <div class="text-block" contenteditable="true">@reallygreatsite<br>www.reallygreatsite.com</div>
+                </section>
+            </div>
+
+            <div class="right-col">
+                <section class="sec" id="sec-exp12">
+                    <h3 class="label-orange">Experience</h3>
+                    <div class="items-container">
+                        <div class="exp-item item-container">
+                            <div class="exp-dot"></div>
+                            <div class="exp-info">
+                                <div class="exp-role" contenteditable="true">Manager Marketing</div>
+                                <div class="exp-date" contenteditable="true">2019 — 2021</div>
+                                <div class="exp-text" contenteditable="true">Led the digital marketing team to achieve 40% growth in online engagement.</div>
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-exp12', 'exp-item')">+ Add Experience</button>
+                </section>
+
+                <section class="sec" id="sec-edu12">
+                    <h3 class="label-orange">Education</h3>
+                    <div class="items-container">
+                        <div class="exp-item item-container">
+                            <div class="exp-dot"></div>
+                            <div class="exp-info">
+                                <div class="exp-role" contenteditable="true">Fauget University</div>
+                                <div class="exp-date" contenteditable="true">2014 — 2018</div>
+                                <div class="exp-text" contenteditable="true">Bachelor of Business Administration in Marketing.</div>
+                            </div>
+                            <button class="btn-del" onclick="this.parentElement.remove()">×</button>
+                        </div>
+                    </div>
+                    <button class="btn-add" onclick="addItem('sec-edu12', 'exp-item')">+ Add Education</button>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/main.js?v=20260830-10"></script>
+    <script>
+        function prev12(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('img12').src = e.target.result; };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
